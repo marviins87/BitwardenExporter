@@ -11,7 +11,7 @@ bw login
 
 If the login is succesful you'll get a session key. Put that session key in the `$key` variable of Bitwarden-backup.ps1 and start the script.
 
-##Output of the script
+## Output of the script
 
 - Backup\
   - Attachments\
