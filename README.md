@@ -1,4 +1,4 @@
-# Bitwarden Attachment Export
+# Bitwarden Attachment Exporter
 
 ## Requirements
 Before you can use this Powershell script you'll have to download the official [Bitwarden CLI](https://github.com/bitwarden/cli)
