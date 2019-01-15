@@ -24,8 +24,10 @@ foreach ($item in $vault){
     if($item.PSobject.Properties.Name -contains "Attachments"){
        foreach ($attachment in $item.attachments){
            $exportName = '[' + $item.name + '] - ' + $attachment.fileName
-           write-host "Exporting attachments of item: " $item.name
+           write-host "Exporting: " $exportName
          .\bw get attachment $attachment.id --itemid $item.id --output "$backupFolder\$attachmentFolder\$exportName" --session $key
        }
     }
 }
+
+write-host "We're finished!"
