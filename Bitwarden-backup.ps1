@@ -1,5 +1,5 @@
 ﻿#	Bitwarden-Attachment-Exporter
-#	Marviins, edited by justinc.s.wong
+#	Marviins, edited by justincswong
 
     # Enter Master Password
     $username   = "REPLACE USERNAME HERE" #keep the quotes
