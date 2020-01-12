@@ -5,7 +5,7 @@ Before you can use this Powershell script you'll have to download the official [
 
 ## How to use
 After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and select "Edit".
-Change "REPLACE USERNAME HERE" to be your Bitwarden username.
+Change "REPLACE USERNAME HERE" with your Bitwarden username.
 
 1. Copy the Bitwarden-backup.ps1 file to the directory where you'd like your backup to be.
 2. Right click on the file and select "Run with PowerShell".
