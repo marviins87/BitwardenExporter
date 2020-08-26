@@ -14,7 +14,7 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
 -Choose to export your vault in .csv or .json format. (csv is the default)  
 -Choose to enable GPG encryption or not. (It is not enabled by default)  
 -If you enable GPG encryption, replace $keyname with the recipient. i.e. Your key's name or email address  
--Choose to enable secure deletion of files. (If enabled, this process can take over 30 minutes) 
+-Choose to enable secure deletion of files. (If enabled, process can take over 30 minutes) 
 ```
 1. Copy the Bitwarden-backup.ps1 file to the directory where you'd like your backup to be.
 	If you are using Veracrypt, I recommend for you to copy this into your mounted Veracrypt drive.
@@ -25,17 +25,17 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
 
 ## Output of the script
 - Backup\
-  - <timestamp>_Attachments\
+  - timestamp_Attachments\
 	- [item1] - attachment1
 	- [item1] - attachment2
 	- [item1] - attachment3
 	- [item2] - attachment
 	- [item3 - Username1] - attachment
 	- [item3 - Username2] - attachment
-  - <timestamp>Bitwarden_backup.csv
-  - *<timestamp>_Bitwarden_backup.json
-  - *<timestamp>_Bitwarden_backup.csv.gpg
-  - *<timestamp>_Bitwarden_backup.json.gpg
+  - timestamp_Bitwarden_backup.csv (default)
+  - timestamp_Bitwarden_backup.json
+  - timestamp_Bitwarden_backup.csv.gpg
+  - timestamp_Bitwarden_backup.json.gpg
 
 ## NOTE
 1. Enabling $securedlt can cause the backup process to take over 30 minutes. It completely overwrites the empty space in your Backup folder  to ensure that your unencrypted vault backup cannot be recovered.
