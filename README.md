@@ -8,7 +8,8 @@ If you choose to use the GPG encryption feature, you must already have an implem
 
 ## How to use
 After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and select "Edit".  
--Change "REPLACE USERNAME HERE" with your Bitwarden username.  
+-Change "REPLACE WITH USERNAME" with your Bitwarden username.  
+-Replace $server with a self-hosted instance if needed. E.g. $server = "https://vault.mydomain.com"  
 -Choose to export your vault in .csv or .json format. (csv is the default)  
 -Choose to enable GPG encryption or not. (It is not enabled by default)  
 -If you enable GPG encryption, replace $keyname with the recipient. i.e. Your key's name or email address  
@@ -19,16 +20,22 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
 2. Right click on the file and select "Run with PowerShell".
 3. Your backup will begin and will be in the folder "Backup".
 
-![Screenshot](https://github.com/justincswong/Bitwarden-Attachment-Exporter/blob/master/screenshot.png)
+![Screenshot](https://github.com/marviins87/Bitwarden-Attachment-Exporter/blob/master/screenshot.png)
 
 ## Output of the script
 - Backup\
-  - Attachments\
-	- [itemname1] - attachmentname1
-	- [itemname1] - attachmentname2
-	- [itemname2] - attachmentname1 
-  - Bitwarden_backup.csv.gpg
-  
+  - <timestamp>_Attachments\
+	- [item1] - attachment1
+	- [item1] - attachment2
+	- [item1] - attachment3
+	- [item2] - attachment
+	- [item3 - Username1] - attachment
+	- [item3 - Username2] - attachment
+  - <timestamp>Bitwarden_backup.csv
+  - *<timestamp>_Bitwarden_backup.json
+  - *<timestamp>_Bitwarden_backup.csv.gpg
+  - *<timestamp>_Bitwarden_backup.json.gpg
+
 ## NOTE
 1. Enabling $securedlt can cause the backup process to take over 30 minutes. It completely overwrites the empty space in your Backup folder  to ensure that your unencrypted vault backup cannot be recovered.
 
