@@ -11,7 +11,7 @@ After installing the Bitwarden CLI, right click on BitwardenExporter.ps1 and sel
 ```
 -Change "REPLACE WITH USERNAME" with your Bitwarden username.  
 -Replace $server with a self-hosted instance if needed. E.g. $server = "https://vault.mydomain.com"  
--Choose to export your vault in .csv or .json format. (csv is the default)  
+-Choose to export your vault in .csv or .json format. (json is the default)  
 -Choose to enable GPG encryption or not. (It is not enabled by default)  
 -If you enable GPG encryption, replace $keyname with the recipient. i.e. Your key's name or email address  
 -Choose to enable secure deletion of files. (If enabled, process can take over 30 minutes)
