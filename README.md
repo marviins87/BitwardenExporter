@@ -1,4 +1,4 @@
-# Bitwarden Attachment Exporter
+# Bitwarden Exporter
 
 ## Requirements
 Before you can use this Powershell script you'll have to download the official [Bitwarden CLI](https://github.com/bitwarden/cli)
@@ -7,7 +7,7 @@ Optional:
 If you choose to use the GPG encryption feature, you must already have an implementation of GPG.
 
 ## How to use
-After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and select "Edit".  
+After installing the Bitwarden CLI, right click on BitwardenExporter.ps1 and select "Edit".  
 ```
 -Change "REPLACE WITH USERNAME" with your Bitwarden username.  
 -Replace $server with a self-hosted instance if needed. E.g. $server = "https://vault.mydomain.com"  
@@ -16,12 +16,12 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
 -If you enable GPG encryption, replace $keyname with the recipient. i.e. Your key's name or email address  
 -Choose to enable secure deletion of files. (If enabled, process can take over 30 minutes)
 ```
-1. Copy the Bitwarden-backup.ps1 file to the directory where you'd like your backup to be.
+1. Copy the BitwardenExporter.ps1 file to the directory where you'd like your backup to be.
 	If you are using Veracrypt, I recommend for you to copy this into your mounted Veracrypt drive.
 2. Right click on the file and select "Run with PowerShell".
 3. Your backup will begin and will be in the folder "Backup".
 
-![Screenshot](https://github.com/marviins87/Bitwarden-Attachment-Exporter/blob/master/screenshot.png)
+![Screenshot](https://github.com/marviins87/BitwardenExporter/blob/master/screenshot.png)
 
 ## Output of the script
 - Backup\
@@ -47,4 +47,4 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
 [justincswong](https://github.com/justincswong) for providing a very nice update to the script!
 
 ## LICENSE
-This software is released under the terms of the MIT License, please see the [LICENSE file](https://github.com/marviins87/Bitwarden-Attachment-Exporter/blob/master/LICENSE).
+This software is released under the terms of the MIT License, please see the [LICENSE file](https://github.com/marviins87/BitwardenExporter/blob/master/LICENSE).
