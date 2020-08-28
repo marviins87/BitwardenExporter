@@ -42,3 +42,6 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
 1. Enabling $securedlt can cause the backup process to take over 30 minutes. It completely overwrites the empty space in your Backup folder  to ensure that your unencrypted vault backup cannot be recovered.
 
 2. Currently, the GPG encryption only supports the encryption of the backed up vault file. It does not encrypt attachments yet.
+
+## LICENSE
+This software is released under the terms of the MIT License, please see file LICENSE.
