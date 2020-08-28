@@ -43,5 +43,8 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
 
 2. Currently, the GPG encryption only supports the encryption of the backed up vault file. It does not encrypt attachments yet.
 
+## Credits & Special Thanks To
+[justincswong](https://github.com/justincswong) for providing a very nice update to the script!
+
 ## LICENSE
-This software is released under the terms of the MIT License, please see file LICENSE.
+This software is released under the terms of the MIT License, please see the [LICENSE file](https://github.com/marviins87/Bitwarden-Attachment-Exporter/blob/master/LICENSE).
