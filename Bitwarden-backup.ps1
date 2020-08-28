@@ -4,7 +4,7 @@
 # Initialization Step
 $username   = "REPLACE WITH USERNAME"			# keep the quotes, replace with your username
 $server		= $null								# use quotes and only change if using a self-hosted server, e.g. $server = "https://vault.mydomain.com"
-$extension  = "csv"                     		# csv or json, keep the quotes, your output file format
+$extension  = "json"                     		# csv or json, keep the quotes, your output file format
 $gpg        = $false                    		# $true or $false, true = gpg encrypt     false = skip gpg encrypt
 $keyname    = "keyName"                 		# gpg recipient, only required if gpg encrypting
 $securedlt  = $false                   		 	# $true or $false, true = secure delete   false = skip secure delete
@@ -47,10 +47,11 @@ $backupFile = (get-date -Format "yyyyMMdd_hhmmss") + "_Bitwarden_backup.$extensi
 $attachmentFolder = (get-date -Format "yyyyMMdd_hhmmss") + '_Attachments'
 
 # Backup Vault
-Write-Host "`nExporting Bitwarden Vault"
+Write-Host "`nSyncing Bitwarden Vault"
 bw sync
-bw export --output "$backupFolder\$backupFile" --format $extension $masterPass
 write-host "`n"
+Write-Host "`nExporting Bitwarden Vault"
+bw export --output "$backupFolder\$backupFile" --format $extension $masterPass
 
 # Backup Attachments
 $vault = bw list items | ConvertFrom-Json
@@ -64,13 +65,32 @@ foreach ($item in $vault){
                 $exportName = '[' + $item.name + '] - ' + $attachment.fileName
             }
 			bw get attachment $attachment.id --itemid $item.id --output "$backupFolder\$attachmentFolder\$exportName"
-			write-host "`n"
+			Write-Host "`n"
 	    }
     }
 }
 
+# Backup Organization Vault (if exists)
+Write-Host "`nSearching for Organization Vault(s)."
+$orgVault = bw list items --organizationid notnull | ConvertFrom-Json
+if($orgVault -ne $null){
+    Write-Host "Organizations vaults found!" -ForegroundColor Green
+	$orgIDs = $($orgVault.organizationid) | Sort-Object | Get-Unique
+    $orgs = bw list organizations | ConvertFrom-Json
+    foreach($orgID in $orgIDs){
+        $organization = $orgs | Where-Object {$_.id -eq $orgId}
+        $backupOrgFile = (get-date -Format "yyyyMMdd_hhmmss") + "_BitwardenOrg_" + $organization.name + "_backup.$extension"
+        Write-Host "`nExporting Bitwarden Organization Vault:" $organization.name
+        bw export --organizationid $orgID --output "$backupFolder\$backupOrgFile" --format $extension $masterPass
+        Write-Host "`n"
+    } 
+}else{
+	Write-Host "`nNo organizations vaults found!"
+}
+
 # Logging Out/Termination Prep
-Write-Host "The Vault has been successfully backed up."
+Write-Host "`nYour vault(s) has been successfully backed up." -ForegroundColor Green
+Write-Host "`nLogging out vault."
 bw logout
 "`n"
 

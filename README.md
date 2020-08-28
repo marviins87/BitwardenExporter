@@ -3,7 +3,7 @@
 ## Requirements
 Before you can use this Powershell script you'll have to download the official [Bitwarden CLI](https://github.com/bitwarden/cli)
 
-Optional:  
+Optional:   
 If you choose to use the GPG encryption feature, you must already have an implementation of GPG.
 
 ## How to use
@@ -14,7 +14,7 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
 -Choose to export your vault in .csv or .json format. (csv is the default)  
 -Choose to enable GPG encryption or not. (It is not enabled by default)  
 -If you enable GPG encryption, replace $keyname with the recipient. i.e. Your key's name or email address  
--Choose to enable secure deletion of files. (If enabled, process can take over 30 minutes) 
+-Choose to enable secure deletion of files. (If enabled, process can take over 30 minutes)
 ```
 1. Copy the Bitwarden-backup.ps1 file to the directory where you'd like your backup to be.
 	If you are using Veracrypt, I recommend for you to copy this into your mounted Veracrypt drive.
@@ -36,6 +36,7 @@ After installing the Bitwarden CLI, right click on Bitwarden-backup.ps1 and sele
   - timestamp_Bitwarden_backup.json
   - timestamp_Bitwarden_backup.csv.gpg
   - timestamp_Bitwarden_backup.json.gpg
+  - timestamp_BitwardenOrg_OrganizationName_backup.csv
 
 ## NOTE
 1. Enabling $securedlt can cause the backup process to take over 30 minutes. It completely overwrites the empty space in your Backup folder  to ensure that your unencrypted vault backup cannot be recovered.
