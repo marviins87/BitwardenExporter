@@ -32,11 +32,11 @@ After installing the Bitwarden CLI, right click on BitwardenExporter.ps1 and sel
 	- [item2] - attachment
 	- [item3 - Username1] - attachment
 	- [item3 - Username2] - attachment
-  - timestamp_Bitwarden_backup.csv (default)
-  - timestamp_Bitwarden_backup.json
+  - timestamp_Bitwarden_backup.json (default)
+  - timestamp_Bitwarden_backup.csv
   - timestamp_Bitwarden_backup.csv.gpg
   - timestamp_Bitwarden_backup.json.gpg
-  - timestamp_BitwardenOrg_OrganizationName_backup.csv
+  - timestamp_BitwardenOrg_OrganizationName_backup.json
 
 ## NOTE
 1. Enabling $securedlt can cause the backup process to take over 30 minutes. It completely overwrites the empty space in your Backup folder  to ensure that your unencrypted vault backup cannot be recovered.
